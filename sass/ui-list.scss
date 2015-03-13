@@ -1,0 +1,13 @@
+$listHeight: 100px;
+$listBgColor: #EDEDED;
+$listActiveColor: #CCC;
+.ui-list-def{
+	li{
+		height: $listHeight;
+		line-height: $listHeight;
+		background-color: $listBgColor;
+	} 
+	li.ui-list-active{
+		background-color: $listActiveColor;
+	}
+}

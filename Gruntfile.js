@@ -11,13 +11,13 @@ module.exports = function(grunt) {
 				files: [
 					'sass/*.scss'
 				],
-				tasks: ['sass', 'postcss','cssmin','concat']
+				tasks: ['sass', 'postcss','cssmin']
 			},
 			dist2: {
 				files: [
 					'js/js-debug/*.js'
 				],
-				tasks: ['uglify']
+				tasks: ['uglify','concat']
 			}
 		},
 		postcss: {
@@ -54,19 +54,15 @@ module.exports = function(grunt) {
                 ext: '.min.css'
             }
         },
-        // concat: {
-        //     options: {
-        //         separator: ' '
-        //     },
-        //     dist: {
-        //         src: ['css/css-min/*.min.css'],
-        //         dest: 'build/galaxy.min.css'
-        //     },
-        //     dist1: {
-        //         src: ['css/css/*.css'],
-        //         dest: 'build/galaxy.css'
-        //     }
-        // }
+        concat: {
+            options: {
+                separator: ';\n'
+            },
+            dist: {
+				src: ['js/js-debug/*.js'],
+				dest: 'js/galaxy.js'
+            }
+        },
         // copy:{
         // 	galaxy:{
         //         src: ['css/css/*.min.css'],       
@@ -91,7 +87,7 @@ module.exports = function(grunt) {
 			},
 			release:{
 				files:{
-					'js/galaxy.js':['js/js-min/*.js']
+					'js/galaxy.min.js':['js/js-min/*.js']
 				}
 			}
 		}
@@ -100,9 +96,9 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-sass');
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
-	// grunt.loadNpmTasks('grunt-contrib-concat');
+	grunt.loadNpmTasks('grunt-contrib-concat');
 	// grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-postcss');
-	grunt.registerTask('default', ['sass', 'postcss','cssmin','uglify']);
-	grunt.registerTask('css', ['sass', 'postcss','cssmin','uglify','watch']);
+	grunt.registerTask('default', ['sass', 'postcss','cssmin','uglify','concat']);
+	grunt.registerTask('local', ['sass', 'postcss','cssmin','uglify','concat','watch']);
 };

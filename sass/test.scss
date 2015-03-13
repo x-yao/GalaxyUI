@@ -1,0 +1,16 @@
+.c1{
+  width: 100px;
+  height: 100px;
+  border:1px solid #F00;
+  &:hover{
+    box-shadow: 4px 4px 4px #000;
+  }
+}
+.c2{
+  width: 100px;
+  height: 100px;
+  border:1px solid #F00;
+  &:hover{
+    box-shadow: 4px 4px 4px #000;
+  }
+}

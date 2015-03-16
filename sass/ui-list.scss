@@ -1,7 +1,9 @@
 $listHeight: 100px;
 $listBgColor: #EDEDED;
 $listActiveColor: #CCC;
-.ui-list-def{
+$listHeaderHeight: 40px;
+$listFooterHeight: 40px;
+.ui-list{
 	li{
 		height: $listHeight;
 		line-height: $listHeight;
@@ -10,4 +12,15 @@ $listActiveColor: #CCC;
 	li.ui-list-active{
 		background-color: $listActiveColor;
 	}
+}
+//待优化
+.ui-list-header{
+	margin-top: $listHeaderHeight;
+}
+.ui-list-footer{
+	margin-bottom: $listHeaderHeight;
+}
+.ui-list-hf{
+	margin-top: $listHeaderHeight;
+	margin-bottom: $listFooterHeight;
 }

@@ -14,3 +14,19 @@
     box-shadow: 4px 4px 4px #000;
   }
 }
+.ui-header-def{
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 40px;
+  text-align: center;
+  background: #FFF;
+}
+.ui-footer-def{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 40px;
+  text-align: center;
+  background: #FFF;
+}

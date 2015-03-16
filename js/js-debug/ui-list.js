@@ -23,42 +23,30 @@
 	}
 	function initScroll(){
 		var loading = false;
-		var sh = window.datas.pageHeight;
 		var tep = '<li data-href="123.html">1</li><li data-href="123.html">1</li><li data-href="123.html">1</li><li data-href="123.html">1</li><li data-href="123.html">1</li>'
-		// $(".ui-list-link").on("touchmove.scroll",function(){
-		// 	var dh = $(".ui-list-link").height()-sh
-		// 	var scroll = $("body").scrollTop();
-		// 	var s = dh-scroll;
-		// 	// var list = $(this);
-		// 	// if (s<50&&(!loading)) {
-		// 	// 	loading = true;
-		// 	// 	setTimeout(function(){
-		// 	// 		list.append(tep);
-		// 	// 		loading = false;
-		// 	// 		reinitLink();
-		// 	// 	},500)
-		// 	// }else if(s > (dh-50)&&(!loading)){
-		// 	// 	loading = true;
-		// 	// 	setTimeout(function(){
-		// 	// 		list.prepend(tep);
-		// 	// 		loading = false;
-		// 	// 		reinitLink();
-		// 	// 	},500)
-		// 	// };
-		// 	console.log(s,dh,scroll);
-		// })
-
+		var el = $(".ui-list-scroll");
 		$(window).on("scroll",function(){
-			var sh2 = document.documentElement.clientHeight
-			var dh = $(".ui-list-link").height()-sh
-			var scroll = $("body").scrollTop();
-			var s = dh-scroll;
-			console.log(dh,scroll,s,sh,sh2)
+			var sData = $.fn.galaxy.getScroll();
+			if (sData.scrollB < 100) {
+				el.trigger("scrollBottom");
+			}else if(sData.scrollT < 100){
+				el.trigger("scrolltop");
+			};
 		})
 	}
 	function reinitLink(){
 		$.fn.galaxy.linkOff();
 		$.fn.galaxy.linkInit();
+	}
+	$.fn.galaxy.getScroll = function (){
+		var dh = $(".ui-list-link").height()-window.datas.pageHeight
+		var scroll = $("body").scrollTop();
+		var s = dh-scroll;
+		return {
+			scrollB : s,
+			scrollT : scroll
+		}
+		// console.log(dh,scroll,s,sh)
 	}
 	$(document).ready(function() {
 		init();

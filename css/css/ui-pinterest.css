@@ -1,0 +1,19 @@
+.ui-flex-ptr {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: stretch;
+          align-items: stretch; }
+  .ui-flex-ptr .ui-item-ptr {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-flex: 1;
+            flex: 1;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+            flex-direction: column;
+    -webkit-box-align: center;
+            align-items: center;
+    width: 0%; }
+  .ui-flex-ptr:last-of-type {
+    -webkit-box-align: start;
+            align-items: flex-start; }

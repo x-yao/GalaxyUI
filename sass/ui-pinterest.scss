@@ -1,0 +1,16 @@
+.ui-flex-ptr{
+	display: flex;
+	align-items: stretch;
+	//justify-content: space-between;
+	.ui-item-ptr{
+		//justify-content:center;
+		display: flex;
+		flex: 1;
+		flex-direction:column;
+		align-items: center;
+		width: 0%;
+	}
+	&:last-of-type{
+		align-items: flex-start;
+	}
+}

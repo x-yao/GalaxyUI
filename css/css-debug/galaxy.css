@@ -216,5 +216,16 @@ em, i {
     background-image: linear-gradient(to right, #F00 0, #F00 50%, transparent 50%), linear-gradient(to right, #F00 0, #F00 50%, transparent 50%);
     background-repeat: repeat-y,repeat-y;
     background-size: 1px 100%,1px 100%; } }
+.ui-flex-ptr {
+  display: flex;
+  align-items: stretch; }
+  .ui-flex-ptr .ui-item-ptr {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    width: 0%; }
+  .ui-flex-ptr:last-of-type {
+    align-items: flex-start; }
 
 /*# sourceMappingURL=galaxy.css.map */

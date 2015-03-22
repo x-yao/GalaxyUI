@@ -1,16 +1,15 @@
-.ui-flex-ptr {
+.ui-tap .ui-tap-header {
   display: -webkit-box;
   display: flex;
   -webkit-box-align: stretch;
           align-items: stretch; }
-  .ui-flex-ptr .ui-item-ptr {
+  .ui-tap .ui-tap-header .ui-item-header {
     display: -webkit-box;
     display: flex;
     -webkit-box-flex: 1;
             flex: 1;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-            flex-direction: column;
+    -webkit-box-pack: center;
+            justify-content: center;
     -webkit-box-align: center;
             align-items: center;
     width: 0%;

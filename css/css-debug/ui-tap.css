@@ -1,12 +1,12 @@
-.ui-flex-ptr {
+.ui-tap .ui-tap-header {
   display: flex;
   align-items: stretch; }
-  .ui-flex-ptr .ui-item-ptr {
+  .ui-tap .ui-tap-header .ui-item-header {
     display: flex;
     flex: 1;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
     width: 0%;
     padding: 10px; }
 
-/*# sourceMappingURL=ui-pinterest.css.map */
+/*# sourceMappingURL=ui-tap.css.map */

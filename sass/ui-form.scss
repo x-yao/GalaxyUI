@@ -1,0 +1,13 @@
+$inputR:5px;
+$inputH:24px;
+$inputW:100%;
+$inputM:10px;
+.ui-form-text {
+	border:1px solid #CCC;
+	border-radius: $inputR;
+	height: $inputH;
+	margin: $inputM;
+}
+.ui-form-select{
+	opacity: 0;
+}

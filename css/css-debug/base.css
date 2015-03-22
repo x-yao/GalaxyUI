@@ -81,5 +81,9 @@
     background-image: linear-gradient(to right, #F00 0, #F00 50%, transparent 50%), linear-gradient(to right, #F00 0, #F00 50%, transparent 50%);
     background-repeat: repeat-y,repeat-y;
     background-size: 1px 100%,1px 100%; } }
+.ui-center {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
 
 /*# sourceMappingURL=base.css.map */

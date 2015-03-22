@@ -216,6 +216,11 @@ em, i {
     background-image: linear-gradient(to right, #F00 0, #F00 50%, transparent 50%), linear-gradient(to right, #F00 0, #F00 50%, transparent 50%);
     background-repeat: repeat-y,repeat-y;
     background-size: 1px 100%,1px 100%; } }
+.ui-center {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
 .ui-flex-ptr {
   display: flex;
   align-items: stretch; }
@@ -224,8 +229,27 @@ em, i {
     flex: 1;
     flex-direction: column;
     align-items: center;
-    width: 0%; }
-  .ui-flex-ptr:last-of-type {
-    align-items: flex-start; }
+    width: 0%;
+    padding: 10px; }
+
+.ui-tap .ui-tap-header {
+  display: flex;
+  align-items: stretch; }
+  .ui-tap .ui-tap-header .ui-item-header {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    width: 0%;
+    padding: 10px; }
+
+.ui-form-text {
+  border: 1px solid #CCC;
+  border-radius: 5px;
+  height: 24px;
+  margin: 10px; }
+
+.ui-form-select {
+  opacity: 0; }
 
 /*# sourceMappingURL=galaxy.css.map */

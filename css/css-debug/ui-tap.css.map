@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAGC,sBAAc;EACb,OAAO,EAAE,IAAI;EACb,WAAW,EAAE,OAAO;EACpB,sCAAe;IACd,OAAO,EAAE,IAAI;IACb,IAAI,EAAE,CAAC;IACP,eAAe,EAAE,MAAM;IACvB,WAAW,EAAE,MAAM;IACnB,KAAK,EAAE,EAAE;IACT,OAAO,EAZE,IAAI",
+"sources": ["../../sass/ui-tap.scss"],
+"names": [],
+"file": "ui-tap.css"
+}

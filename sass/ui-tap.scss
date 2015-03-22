@@ -1,0 +1,33 @@
+$tapPading: 10px;
+//$activeBg:#CCC;
+.ui-tap{
+	.ui-tap-header{
+		display: flex;
+		align-items: stretch;
+		.ui-item-header{
+			display: flex;
+			flex: 1;
+			justify-content: center;
+			align-items: center;
+			width: 0%;
+			padding:$tapPading;
+			&.active{
+				//background: $activeBg;
+			}
+		}
+	}
+	// .ui-tap-ani {
+	// 	.ui-item-header{
+	// 		transition: all 1s ease;
+	// 	}
+	// 	&.ui-tap-contain{
+	// 		display: flex;
+	// 		flex-direction: column;
+	// 		.ui-item-contain{
+	// 			transition: all 1s ease;
+	// 		}
+	// 	}
+	// 	border:1px solid #CCC;
+	// 	transition: all 1s ease;
+	// }
+}

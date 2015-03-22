@@ -100,3 +100,10 @@
     background-repeat: repeat-y,repeat-y;
     -webkit-background-size: 1px 100%,1px 100%;
             background-size: 1px 100%,1px 100%; } }
+.ui-center {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center; }

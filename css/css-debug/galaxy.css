@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*CSS Reset*/
 body,
 div,
@@ -249,7 +250,29 @@ em, i {
   height: 24px;
   margin: 10px; }
 
-.ui-form-select {
-  opacity: 0; }
+.ui-select-wrap {
+  position: relative;
+  width: 90%;
+  height: 40px;
+  line-height: 40px; }
+  .ui-select-wrap .ui-select-value, .ui-select-wrap .ui-form-select {
+    position: absolute;
+    width: 100%;
+    height: inherit; }
+  .ui-select-wrap .ui-select-value {
+    border: 1px solid #CCC;
+    box-sizing: border-box;
+    text-align: center; }
+  .ui-select-wrap .ui-form-select {
+    top: 0;
+    left: 0;
+    opacity: 0; }
+  .ui-select-wrap .ui-select-arr {
+    position: absolute;
+    right: 10px;
+    line-height: inherit;
+    height: inherit; }
+    .ui-select-wrap .ui-select-arr:after {
+      content: "↓"; }
 
 /*# sourceMappingURL=galaxy.css.map */

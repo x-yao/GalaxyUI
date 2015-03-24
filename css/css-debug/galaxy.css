@@ -73,7 +73,8 @@ select {
   border: 0;
   background: none;
   -webkit-appearance: none;
-  outline: 0; }
+  outline: 0;
+  border-radius: 0; }
 
 a, button, input, select, textarea, a:focus, button:focus, input:focus, select:focus, textarea:focus, [onclick] {
   outline: 0;

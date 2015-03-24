@@ -24,7 +24,7 @@ module.exports = function(grunt) {
 			options: {
 				processors: [
 					autoprefixer({
-						browsers: ['ios 5','android 2.3']
+						browsers: ['ios 5','android 2.3','ios 7']
 					}).postcss
 				]
 			},

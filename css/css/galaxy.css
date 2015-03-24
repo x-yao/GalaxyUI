@@ -73,7 +73,8 @@ select {
   border: 0;
   background: none;
   -webkit-appearance: none;
-  outline: 0; }
+  outline: 0;
+  border-radius: 0; }
 
 a, button, input, select, textarea, a:focus, button:focus, input:focus, select:focus, textarea:focus, [onclick] {
   outline: 0;
@@ -240,43 +241,58 @@ em, i {
             background-size: 1px 100%,1px 100%; } }
 .ui-center {
   display: -webkit-box;
+  display: -webkit-flex;
   display: flex;
   -webkit-box-pack: center;
+  -webkit-justify-content: center;
           justify-content: center;
   -webkit-box-align: center;
+  -webkit-align-items: center;
           align-items: center; }
 
 .ui-flex-ptr {
   display: -webkit-box;
+  display: -webkit-flex;
   display: flex;
   -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
           align-items: stretch; }
   .ui-flex-ptr .ui-item-ptr {
     display: -webkit-box;
+    display: -webkit-flex;
     display: flex;
     -webkit-box-flex: 1;
+    -webkit-flex: 1;
             flex: 1;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
             flex-direction: column;
     -webkit-box-align: center;
+    -webkit-align-items: center;
             align-items: center;
     width: 0%;
     padding: 10px; }
 
 .ui-tap .ui-tap-header {
   display: -webkit-box;
+  display: -webkit-flex;
   display: flex;
   -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
           align-items: stretch; }
   .ui-tap .ui-tap-header .ui-item-header {
     display: -webkit-box;
+    display: -webkit-flex;
     display: flex;
     -webkit-box-flex: 1;
+    -webkit-flex: 1;
             flex: 1;
     -webkit-box-pack: center;
+    -webkit-justify-content: center;
             justify-content: center;
     -webkit-box-align: center;
+    -webkit-align-items: center;
             align-items: center;
     width: 0%;
     padding: 10px; }

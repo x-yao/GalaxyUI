@@ -1,16 +1,22 @@
 .ui-tap .ui-tap-header {
   display: -webkit-box;
+  display: -webkit-flex;
   display: flex;
   -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
           align-items: stretch; }
   .ui-tap .ui-tap-header .ui-item-header {
     display: -webkit-box;
+    display: -webkit-flex;
     display: flex;
     -webkit-box-flex: 1;
+    -webkit-flex: 1;
             flex: 1;
     -webkit-box-pack: center;
+    -webkit-justify-content: center;
             justify-content: center;
     -webkit-box-align: center;
+    -webkit-align-items: center;
             align-items: center;
     width: 0%;
     padding: 10px; }

@@ -110,3 +110,7 @@
   -webkit-box-align: center;
   -webkit-align-items: center;
           align-items: center; }
+
+.ui-header-sta {
+  width: 100%;
+  text-align: center; }

@@ -118,10 +118,6 @@ em, i {
   text-align: center;
   background: #FFF; }
 
-.ui-list li {
-  height: 100px;
-  line-height: 100px;
-  background-color: #EDEDED; }
 .ui-list li.ui-list-active {
   background-color: #CCC; }
 
@@ -222,6 +218,10 @@ em, i {
   display: flex;
   justify-content: center;
   align-items: center; }
+
+.ui-header-sta {
+  width: 100%;
+  text-align: center; }
 
 .ui-flex-ptr {
   display: flex;

@@ -1,7 +1,3 @@
-.ui-list li {
-  height: 100px;
-  line-height: 100px;
-  background-color: #EDEDED; }
 .ui-list li.ui-list-active {
   background-color: #CCC; }
 

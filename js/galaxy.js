@@ -1,5 +1,9 @@
 ! function($) {
-	$.fn.galaxy = {
+	$.fn.galaxy = function(opt){
+		this.init();
+		this.option = $.extend(this.defOptions,opt);
+	};
+	$.fn.galaxy.prototype = {
 		init: function() {
 			this.linkInit();
 			this.ptrInit();
@@ -27,28 +31,19 @@
 			ptr:false,
 
 		},
-		customOptions:{
-
-		},
-		options:function (opt) {
-			this.customOptions = opt;
-		}
 	}
-	var galaxy = $.fn.galaxy;
+	window.Galaxy = $.fn.galaxy||{};
 	window.datas = {
 		"pageWidth": document.documentElement.clientWidth,
-		"pageHeight": document.documentElement.clientHeight,
-		"isSafari": (/Safari/).test(navigator.userAgent)
+		"pageHeight": document.documentElement.clientHeight
 	}
-	$(document).ready(function() {
-		var opt = $.extend(galaxy.defOptions,galaxy.customOptions)
-		FastClick.attach(document.body);
-		$.fn.galaxy.init();
-	})
-}(window.Zepto);
+}(window.Zepto)
+$(document).ready(function() {
+	FastClick.attach(document.body);
+});
 console.log("hello");;
 ! function($) {
-	$.fn.galaxy.formInit = function() {
+	$.fn.galaxy.prototype.formInit = function() {
 		var select = $(".ui-form-select")
 		if (select.length == 0) {
 			return false;
@@ -118,7 +113,7 @@ console.log("hello");;
 		$.fn.galaxy.linkOff();
 		$.fn.galaxy.linkInit();
 	}
-	$.fn.galaxy.getScroll = function (){
+	$.fn.galaxy.prototype.getScroll = function (){
 		var dh = $(".ui-list-link").height()-window.datas.pageHeight
 		var scroll = $("body").scrollTop();
 		var s = dh-scroll;
@@ -133,7 +128,51 @@ console.log("hello");;
 	})
 }(window.Zepto);
 ! function($) {
-	$.fn.galaxy.ptrInit = function() {
+	var animate = {
+		aIn:'ani-pop-sta',
+		aInOut:'ani-pop-rem',
+		aInClick:'ani-pop-sta',
+	}
+	// opt = {
+	// 	type:'', // el,loading,allScreen,alert
+	// 	animate:'', //animate配置
+	//  click:Boolean, // animate == aIn,defalut true
+	// 	el:$(select), //插入的元素 type == el,loading,allScreen,alert
+	// 	button:Boolean, //当type == alert 且为 true 
+	// 	buttonValue:{a:foo()},//当type == alert 且为 true 
+	// }
+	$.fn.galaxy.prototype.pop = function(opt) {
+		if (typeof opt == "string" || typeof opt == "number") {
+			render(opt,'','aInOut');
+		};
+	}
+	function render(value,type,ani){
+		switch(type)
+		{
+		case 'el':
+
+		  break;
+		case 'loading':
+
+		  break;
+		case 'allScreen':
+
+		  break;
+		case 'alert':
+
+		  break;
+		default:
+		  renderDef(value,ani);
+		}
+	}
+	function renderDef(value,ani){
+		var tAni = animate[ani];
+		var tmp = '<div class="ui-pop ui-pop-def ui-center '+tAni+'">'+value+'</div>';
+		$(tmp).appendTo('body');
+	}
+}(window.Zepto);
+! function($) {
+	$.fn.galaxy.prototype.ptrInit = function() {
 		var ptr = $(".ui-ptr");
 		if (ptr.length == 0) {
 			return false
@@ -169,7 +208,7 @@ console.log("hello");;
 }(window.Zepto);
 ! function($) {
 	var header,contain;
-	$.fn.galaxy.tapInit = function () {
+	$.fn.galaxy.prototype.tapInit = function () {
 		header = $(".ui-tap .ui-tap-header .ui-item-header");
 		contain = $(".ui-tap .ui-tap-contain .ui-item-contain");
 		if (header.length == 0) {

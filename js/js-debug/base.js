@@ -1,5 +1,9 @@
 ! function($) {
-	$.fn.galaxy = {
+	$.fn.galaxy = function(opt){
+		this.init();
+		this.option = $.extend(this.defOptions,opt);
+	};
+	$.fn.galaxy.prototype = {
 		init: function() {
 			this.linkInit();
 			this.ptrInit();
@@ -27,22 +31,13 @@
 			ptr:false,
 
 		},
-		customOptions:{
-
-		},
-		options:function (opt) {
-			this.customOptions = opt;
-		}
 	}
-	var galaxy = $.fn.galaxy;
+	window.Galaxy = $.fn.galaxy||{};
 	window.datas = {
 		"pageWidth": document.documentElement.clientWidth,
-		"pageHeight": document.documentElement.clientHeight,
-		"isSafari": (/Safari/).test(navigator.userAgent)
+		"pageHeight": document.documentElement.clientHeight
 	}
-	$(document).ready(function() {
-		var opt = $.extend(galaxy.defOptions,galaxy.customOptions)
-		FastClick.attach(document.body);
-		$.fn.galaxy.init();
-	})
 }(window.Zepto)
+$(document).ready(function() {
+	FastClick.attach(document.body);
+})

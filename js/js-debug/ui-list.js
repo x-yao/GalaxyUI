@@ -38,7 +38,7 @@
 		$.fn.galaxy.linkOff();
 		$.fn.galaxy.linkInit();
 	}
-	$.fn.galaxy.getScroll = function (){
+	$.fn.galaxy.prototype.getScroll = function (){
 		var dh = $(".ui-list-link").height()-window.datas.pageHeight
 		var scroll = $("body").scrollTop();
 		var s = dh-scroll;

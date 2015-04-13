@@ -1,5 +1,5 @@
 ! function($) {
-	$.fn.galaxy.formInit = function() {
+	$.fn.galaxy.prototype.formInit = function() {
 		var select = $(".ui-form-select")
 		if (select.length == 0) {
 			return false;

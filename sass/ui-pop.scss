@@ -1,0 +1,37 @@
+$widthContain:60%;
+$marginTopContain:100px;
+$paddingContain:25px;
+$fontColor:#EEE;
+$fontSize:16px;
+$bacContain:rgba(0,0,0,.6);
+
+.ui-pop-def {
+  width: $widthContain;
+  margin: 0 auto;
+  background: $bacContain;
+  margin-top: $marginTopContain;
+  box-sizing: border-box;
+  padding: $paddingContain;
+  color: $fontColor;
+  font-size: $fontSize;
+  z-index: 999;
+}
+.ani-pop-sta{
+  animation: pop-def-static .4s ease-in-out;
+}
+.ani-pop-rem{
+  animation: pop-def-remove 1.2s ease-in-out;
+  animation-fill-mode: forwards;
+}
+@keyframes pop-def-static{
+  0%{transform:scale(.6);opacity: .2;}
+  85%{transform:scale(1.1);opacity: .9;}
+  100%{transform:scale(1);opacity: 1;}
+}
+@keyframes pop-def-remove{
+  0%{transform:scale(.6);opacity: .2;}
+  20%{transform:scale(1.1);opacity: .9;}
+  25%{transform:scale(1);opacity: 1;}
+  85%{opacity: 1;}
+  100%{opacity: 0;}
+}

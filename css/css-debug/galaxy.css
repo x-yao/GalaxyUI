@@ -276,4 +276,47 @@ em, i {
     .ui-select-wrap .ui-select-arr:after {
       content: "↓"; }
 
+.ui-pop-def {
+  width: 60%;
+  margin: 0 auto;
+  background: rgba(0, 0, 0, 0.6);
+  margin-top: 100px;
+  box-sizing: border-box;
+  padding: 25px;
+  color: #EEE;
+  font-size: 16px;
+  z-index: 999; }
+
+.ani-pop-sta {
+  animation: pop-def-static .4s ease-in-out; }
+
+.ani-pop-rem {
+  animation: pop-def-remove 1.2s ease-in-out;
+  animation-fill-mode: forwards; }
+
+@keyframes pop-def-static {
+  0% {
+    transform: scale(0.6);
+    opacity: .2; }
+  85% {
+    transform: scale(1.1);
+    opacity: .9; }
+  100% {
+    transform: scale(1);
+    opacity: 1; } }
+@keyframes pop-def-remove {
+  0% {
+    transform: scale(0.6);
+    opacity: .2; }
+  20% {
+    transform: scale(1.1);
+    opacity: .9; }
+  25% {
+    transform: scale(1);
+    opacity: 1; }
+  85% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+
 /*# sourceMappingURL=galaxy.css.map */

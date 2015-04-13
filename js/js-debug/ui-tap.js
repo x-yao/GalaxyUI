@@ -1,6 +1,6 @@
 ! function($) {
 	var header,contain;
-	$.fn.galaxy.tapInit = function () {
+	$.fn.galaxy.prototype.tapInit = function () {
 		header = $(".ui-tap .ui-tap-header .ui-item-header");
 		contain = $(".ui-tap .ui-tap-contain .ui-item-contain");
 		if (header.length == 0) {

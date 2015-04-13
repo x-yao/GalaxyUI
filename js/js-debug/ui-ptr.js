@@ -1,5 +1,5 @@
 ! function($) {
-	$.fn.galaxy.ptrInit = function() {
+	$.fn.galaxy.prototype.ptrInit = function() {
 		var ptr = $(".ui-ptr");
 		if (ptr.length == 0) {
 			return false

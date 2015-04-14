@@ -20,7 +20,7 @@
 		},
 		linkInit: function() {
 			var self = this;
-			$('[data-href]').on('click', function(e) {
+			$('body').on('click','[data-href]', function(e) {
 				self.initLink(e);
 			})
 		},

@@ -9,6 +9,7 @@
 			this.ptrInit();
 			this.tapInit();
 			this.formInit();
+			this.listInit();
 		},
 		//初始化连接方法
 		initLink: function(e) {

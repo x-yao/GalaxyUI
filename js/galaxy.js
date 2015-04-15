@@ -9,6 +9,7 @@
 			this.ptrInit();
 			this.tapInit();
 			this.formInit();
+			this.listInit();
 		},
 		//初始化连接方法
 		initLink: function(e) {
@@ -74,9 +75,9 @@ console.log("hello");;
 	}
 }(window.Zepto);
 !function($) {
-	function init(){
+	$.fn.galaxy.prototype.listInit = function (){
 		initLinkAct();
-		initScroll()
+		//initScroll()
 	}
 	function initLinkAct(){
 		$(".ui-list-link").on("touchstart","li",function(e){
@@ -96,36 +97,29 @@ console.log("hello");;
 			})
 		})
 	}
-	function initScroll(){
-		var loading = false;
-		var tep = '<li data-href="123.html">1</li><li data-href="123.html">1</li><li data-href="123.html">1</li><li data-href="123.html">1</li><li data-href="123.html">1</li>'
-		var el = $(".ui-list-scroll");
-		$(window).on("scroll",function(){
-			var sData = $.fn.galaxy.getScroll();
-			if (sData.scrollB < 100) {
-				el.trigger("scrollBottom");
-			}else if(sData.scrollT < 100){
-				el.trigger("scrolltop");
-			};
-		})
-	}
-	function reinitLink(){
-		$.fn.galaxy.linkOff();
-		$.fn.galaxy.linkInit();
-	}
-	$.fn.galaxy.prototype.getScroll = function (){
-		var dh = $(".ui-list-link").height()-window.datas.pageHeight
-		var scroll = $("body").scrollTop();
-		var s = dh-scroll;
-		return {
-			scrollB : s,
-			scrollT : scroll
-		}
-		// console.log(dh,scroll,s,sh)
-	}
-	$(document).ready(function() {
-		init();
-	})
+	// function initScroll(){
+	// 	var loading = false;
+	// 	var tep = '<li data-href="123.html">1</li><li data-href="123.html">1</li><li data-href="123.html">1</li><li data-href="123.html">1</li><li data-href="123.html">1</li>'
+	// 	var el = $(".ui-list-scroll");
+	// 	$(window).on("scroll",function(){
+	// 		var sData = $.fn.galaxy.getScroll();
+	// 		if (sData.scrollB < 100) {
+	// 			el.trigger("scrollBottom");
+	// 		}else if(sData.scrollT < 100){
+	// 			el.trigger("scrolltop");
+	// 		};
+	// 	})
+	// }
+	// $.fn.galaxy.prototype.getScroll = function (){
+	// 	var dh = $(".ui-list-link").height()-window.datas.pageHeight
+	// 	var scroll = $("body").scrollTop();
+	// 	var s = dh-scroll;
+	// 	return {
+	// 		scrollB : s,
+	// 		scrollT : scroll
+	// 	}
+	// 	// console.log(dh,scroll,s,sh)
+	// }
 }(window.Zepto);
 ! function($) {
 	var animate = {

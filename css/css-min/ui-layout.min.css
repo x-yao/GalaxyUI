@@ -1,0 +1,1 @@
+.ui-layout-header{position:fixed;top:0;left:0;right:0;height:40px;background:#AAA;z-index:500}.ui-layout-footer{position:fixed;bottom:0;left:0;right:0;height:40px;background:#BBB;z-index:500}.ui-layout-main{position:absolute;top:40px;bottom:40px;overflow-y:scroll;background:#CCC;-webkit-overflow-scrolling:touch;height:2000px;width:100%}

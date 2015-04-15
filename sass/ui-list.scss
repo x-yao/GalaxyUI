@@ -5,9 +5,9 @@ $listHeaderHeight: 40px;
 $listFooterHeight: 40px;
 .ui-list{
 	li{
-		// height: $listHeight;
-		// line-height: $listHeight;
-		// background-color: $listBgColor;
+		height: $listHeight;
+		line-height: $listHeight;
+		background-color: $listBgColor;
 	} 
 	li.ui-list-active{
 		background-color: $listActiveColor;

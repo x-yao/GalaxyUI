@@ -11,11 +11,15 @@
 </head>
 <body>
 	<header class="ui-layout-header">header</header>
-	<div class="ui-layout-main"></div>
+	<div class="ui-layout-main"><div style="height:2000px"></div></div>
 	<footer class="ui-layout-footer">footer</footer>
 	<script>
     $(document).ready(function() {
 		var galaxy = new Galaxy();
+		$('.ui-layout-main').on("scroll",function(e){
+			var a = $('.ui-layout-main').scrollTop();
+			console.log(a);
+		})
 	})
     </script>
 </body>

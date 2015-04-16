@@ -1,7 +1,8 @@
 .ui-list li {
   height: 100px;
   line-height: 100px;
-  background-color: #EDEDED; }
+  background-color: #EDEDED;
+  overflow: hidden; }
 .ui-list li.ui-list-active {
   background-color: #CCC; }
 
@@ -14,5 +15,16 @@
 .ui-list-hf {
   margin-top: 40px;
   margin-bottom: 40px; }
+
+.ui-list-slide {
+  display: flex; }
+
+.ui-slide-main {
+  flex: 1;
+  background: #FFF; }
+
+.ui-slide-panel {
+  display: flex;
+  flex: 0 0 0; }
 
 /*# sourceMappingURL=ui-list.css.map */

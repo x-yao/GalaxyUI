@@ -121,7 +121,8 @@ em, i {
 .ui-list li {
   height: 100px;
   line-height: 100px;
-  background-color: #EDEDED; }
+  background-color: #EDEDED;
+  overflow: hidden; }
 .ui-list li.ui-list-active {
   background-color: #CCC; }
 
@@ -134,6 +135,17 @@ em, i {
 .ui-list-hf {
   margin-top: 40px;
   margin-bottom: 40px; }
+
+.ui-list-slide {
+  display: flex; }
+
+.ui-slide-main {
+  flex: 1;
+  background: #FFF; }
+
+.ui-slide-panel {
+  display: flex;
+  flex: 0 0 0; }
 
 .ui-border-t {
   border-top: 1px solid #F00; }
@@ -373,7 +385,6 @@ em, i {
   overflow-y: scroll;
   background: #CCC;
   -webkit-overflow-scrolling: touch;
-  height: 2000px;
   width: 100%; }
 
 /*# sourceMappingURL=galaxy.css.map */

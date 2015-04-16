@@ -8,6 +8,7 @@ $listFooterHeight: 40px;
 		height: $listHeight;
 		line-height: $listHeight;
 		background-color: $listBgColor;
+		overflow: hidden;
 	} 
 	li.ui-list-active{
 		background-color: $listActiveColor;
@@ -23,4 +24,15 @@ $listFooterHeight: 40px;
 .ui-list-hf{
 	margin-top: $listHeaderHeight;
 	margin-bottom: $listFooterHeight;
+}
+.ui-list-slide{
+	display: flex;
+}
+.ui-slide-main{
+	flex:1;
+	background: #FFF;
+}
+.ui-slide-panel{
+	display:flex;
+	flex:0 0 0;
 }

@@ -1,9 +1,14 @@
-$widthContain:60%;
+$widthContain:80%;
 $marginTopContain:100px;
 $paddingContain:25px;
 $fontColor:#EEE;
 $fontSize:16px;
 $bacContain:rgba(0,0,0,.6);
+$bacalert:rgba(0,0,0,.3);
+$alertContain:#FFF;
+$alertActive:#CCC;
+$alertColor:#000;
+$paddingAlert:5px;
 
 .ui-pop-def {
   width: $widthContain;
@@ -20,7 +25,7 @@ $bacContain:rgba(0,0,0,.6);
   margin-left: -$widthContain/2;
 }
 .ui-pop-screen {
-  position: absolute;
+  position: fixed;
   width: 100%;
   height: 100%;
   background: $bacContain;
@@ -28,6 +33,54 @@ $bacContain:rgba(0,0,0,.6);
   color: $fontColor;
   font-size: $fontSize;
   z-index: 899;
+  top: 0;
+}
+.ui-pop-screen.ui-alert-bac{
+  background: $bacalert;
+}
+.ui-pop-alert{
+  width: $widthContain;
+  border-radius:5px;
+  margin: 0 auto;
+  background: $alertContain;
+  top: $marginTopContain;
+  box-sizing: border-box;
+  // padding: $paddingAlert;
+  color: $alertColor;
+  font-size: $fontSize;
+  position: fixed;
+  z-index: 999;
+  left: 50%;
+  margin-left: -$widthContain/2;
+  text-align: center;
+  // box-shadow: 0px 0px 8px #7F7F7F;
+}
+.ui-alert-button{
+  display: flex;
+}
+.alert-button-item{
+  flex:1;
+  padding:5px;
+  border-left:1px solid #EEE;
+}
+.alert-button-item:first-child{
+  border:none;
+}
+.alert-button-item.active{
+  background:$alertActive;
+}
+.ui-alert-main{
+  border-bottom:1px solid #EEE;
+  padding:10px 5px;
+}
+.alert-main-title{
+  font-size: 18px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.alert-main-article{
+  font-size: 14px;
 }
 .flex-direction-col{
   flex-direction: column;
@@ -37,6 +90,9 @@ $bacContain:rgba(0,0,0,.6);
 }
 .ani-pop-full{
   animation: pop-screen-static .4s ease;
+}
+.ani-pop-alertBac{
+  animation: pop-alert-bac .4s ease;
 }
 .ani-pop-rem{
   animation: pop-def-remove 1.2s ease-in-out;
@@ -50,6 +106,10 @@ $bacContain:rgba(0,0,0,.6);
 @keyframes pop-screen-static{
   0%{opacity: .6;transform:scale(.6);}
   100%{transform:scale(1);opacity: 1;}
+}
+@keyframes pop-alert-bac{
+  0%{opacity: .6;}
+  100%{opacity: 1;}
 }
 @keyframes pop-def-remove{
   0%{transform:scale(.6);opacity: .2;}

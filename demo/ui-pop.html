@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
-	<title>Document</title>
-	<link rel="stylesheet" href="../css/css/galaxy.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/css/galaxy.css">
     <script src="../js/zepto.js"></script>
     <script src="../js/fastclick.js"></script>
     <script src="../js/galaxy.js"></script>
@@ -12,21 +13,99 @@
 </head>
 
 <body>
-	<header class="ui-header-def">123</header>
-	<!-- <footer class="ui-footer-def">123</footer> -->
-	<script>
+    <ul class="ui-list ui-list-link ui-list-scroll">
+        <li class="pop1">常规pop弹窗</li>
+        <li class="pop2">常规alert弹窗</li>
+        <li class="pop3">常规遮罩弹窗</li>
+        <li class="pop4">自带el弹窗</li>
+        <li class="pop5">自带el遮罩弹窗</li>
+        <li class="pop6">多按钮alert</li>
+    </ul>
+    <script>
     $(document).ready(function() {
-		var galaxy = new Galaxy();
-		// var a = '<input>'
-		//galaxy.pop(_.escape(a));
-		var a = '<div style="width: 100px;height: 100px;background: #FFF;">123</div>'
-		galaxy.pop({
-			el:$(a),
-			value:'123',
-			animate:'aInFull',
-			//flexDirection:'row',
-			type:'fullScreen',
-		});
-	})
+        var galaxy = new Galaxy();
+        // var a = '<input>'
+        // $('.pop1').on('click',function(){
+
+        // })
+        $('.pop1').on('click',function(){
+        	galaxy.pop('123');
+        })
+        $('.pop2').on('click',function(){
+        	galaxy.alert('123')
+        })
+        $('.pop3').on('click',function(){
+        	galaxy.pop({
+            	value:'123',
+            	animate:'aInFull',
+            	//flexDirection:'row',
+            	type:'fullScreen',
+            	click:true
+            });
+        })
+        $('.pop4').on('click',function(){
+        	var a = '<div style="width: 100px;height: 100px;background: #FFF;">123</div>'
+        	galaxy.pop({
+            	el:$(a),
+            	value:'123',
+            	animate:'aInOut',
+            	//flexDirection:'row',
+            	type:'el',
+            });
+        })
+        $('.pop5').on('click',function(){
+        	var a = '<div style="width: 100px;height: 100px;background: #FFF;">123</div>'
+        	galaxy.pop({
+            	el:$(a),
+            	value:'123',
+            	animate:'aInFull',
+            	//flexDirection:'row',
+            	type:'fullScreen',
+            	click:true
+            });
+        })
+        $('.pop6').on('click',function(){
+        	galaxy.alert({
+	            a: 1
+	        }, {
+	        	title:'title',
+	            button: [{
+	                'value': '确认',
+	                // className:'123',
+	                // handle:galaxy.removeAlert()
+	            },{
+	            	'value': '取消',
+	                className:'321',
+	                handle:function(){
+	                	window.location = 'http://www.baidu.com'
+	                }
+	            }]
+	        });
+        })
+        //galaxy.pop(_.escape(a));
+        
+            // galaxy.pop({
+            // 	el:$(a),
+            // 	value:'123',
+            // 	animate:'aInFull',
+            // 	//flexDirection:'row',
+            // 	type:'fullScreen',
+            // });
+        // galaxy.alert({
+        //     a: 1
+        // }, {
+        //     button: [{
+        //         'value': '确认',
+        //         // className:'123',
+        //         // handle:galaxy.removeAlert()
+        //     },{
+        //     	'value': '取消',
+        //         className:'321',
+        //         handle:function(){
+        //         	window.location = 'http://www.baidu.com'
+        //         }
+        //     }]
+        // });
+    })
     </script>
 </body>

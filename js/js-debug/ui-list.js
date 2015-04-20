@@ -45,8 +45,9 @@
 	// 		}],
 	// 		right : []
 	// 	}
-
 	// }
+
+	//list scroll 未完待续
 	var startP,//起始点
 		endP,//终结点
 		endDis,//结尾长度
@@ -62,13 +63,14 @@
 		bindSlide($(el));
 	}
 	function bindSlide(el){
-		el.on('touchstart','.ui-list-slide',function(e){
+		el.on('touchstart.slide','.ui-list-slide',function(e){
 			var touch = e.changedTouches[0];
 			leftCont = el.find('.ui-slide-left .ui-slide-item').length;
 			rightCont = el.find('.ui-slide-right .ui-slide-item').length;
 			startP = touch.pageX;
 			console.log(touch.pageX);
-			el.on('touchmove','.ui-list-slide',function(e2){
+			el.on('touchmove.slide','.ui-list-slide',function(e2){
+				e2.preventDefault();
 				var direction;
 				var touchM = e2.changedTouches[0];
 				var distance = touchM.pageX - startP;
@@ -81,9 +83,9 @@
 				animateMove($(this),distance);
 			})
 		})
-		el.on('touchend','.ui-list-slide',function(e){
+		el.on('touchend.slide','.ui-list-slide',function(e){
 			var touch = e.changedTouches[0];
-			el.off('touchmove');
+			el.off('touchmove.slide');
 			endDis = touch.pageX - startP;
 			moveEnd(el,endDis);
 		})
@@ -99,7 +101,7 @@
 	}
 	function moveEnd(el,endDis){
 		var dis = Math.abs(endDis);
-		if (dis < 80) {
+		if (dis < 30) {
 			length = 0;
 		}else{
 			if (endDis < 0) {

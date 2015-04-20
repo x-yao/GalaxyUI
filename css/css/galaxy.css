@@ -354,7 +354,7 @@ em, i {
       content: "↓"; }
 
 .ui-pop-def {
-  width: 60%;
+  width: 80%;
   margin: 0 auto;
   background: rgba(0, 0, 0, 0.6);
   top: 100px;
@@ -366,10 +366,10 @@ em, i {
   position: fixed;
   z-index: 999;
   left: 50%;
-  margin-left: -30%; }
+  margin-left: -40%; }
 
 .ui-pop-screen {
-  position: absolute;
+  position: fixed;
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.6);
@@ -377,7 +377,58 @@ em, i {
           box-sizing: border-box;
   color: #EEE;
   font-size: 16px;
-  z-index: 899; }
+  z-index: 899;
+  top: 0; }
+
+.ui-pop-screen.ui-alert-bac {
+  background: rgba(0, 0, 0, 0.3); }
+
+.ui-pop-alert {
+  width: 80%;
+  border-radius: 5px;
+  margin: 0 auto;
+  background: #FFF;
+  top: 100px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  color: #000;
+  font-size: 16px;
+  position: fixed;
+  z-index: 999;
+  left: 50%;
+  margin-left: -40%;
+  text-align: center; }
+
+.ui-alert-button {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex; }
+
+.alert-button-item {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+          flex: 1;
+  padding: 5px;
+  border-left: 1px solid #EEE; }
+
+.alert-button-item:first-child {
+  border: none; }
+
+.alert-button-item.active {
+  background: #CCC; }
+
+.ui-alert-main {
+  border-bottom: 1px solid #EEE;
+  padding: 10px 5px; }
+
+.alert-main-title {
+  font-size: 18px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; }
+
+.alert-main-article {
+  font-size: 14px; }
 
 .flex-direction-col {
   -webkit-box-orient: vertical;
@@ -392,6 +443,10 @@ em, i {
 .ani-pop-full {
   -webkit-animation: pop-screen-static .4s ease;
           animation: pop-screen-static .4s ease; }
+
+.ani-pop-alertBac {
+  -webkit-animation: pop-alert-bac .4s ease;
+          animation: pop-alert-bac .4s ease; }
 
 .ani-pop-rem {
   -webkit-animation: pop-def-remove 1.2s ease-in-out;
@@ -443,6 +498,16 @@ em, i {
   100% {
     -webkit-transform: scale(1);
             transform: scale(1);
+    opacity: 1; } }
+@-webkit-keyframes pop-alert-bac {
+  0% {
+    opacity: .6; }
+  100% {
+    opacity: 1; } }
+@keyframes pop-alert-bac {
+  0% {
+    opacity: .6; }
+  100% {
     opacity: 1; } }
 @-webkit-keyframes pop-def-remove {
   0% {

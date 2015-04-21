@@ -68,7 +68,6 @@
 			leftCont = el.find('.ui-slide-left .ui-slide-item').length;
 			rightCont = el.find('.ui-slide-right .ui-slide-item').length;
 			startP = touch.pageX;
-			console.log(touch.pageX);
 			el.on('touchmove.slide','.ui-list-slide',function(e2){
 				e2.preventDefault();
 				var direction;

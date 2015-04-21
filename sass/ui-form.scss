@@ -1,14 +1,102 @@
-$inputR:5px;
-$inputH:24px;
-$inputW:100%;
-$inputM:10px;
 $selectDefW:90%;
-$selectDefH:40px;
-.ui-form-text {
-	border:1px solid #CCC;
-	border-radius: $inputR;
-	height: $inputH;
-	margin: $inputM;
+$selectDefH:44px;
+$formBac:#FFF;
+$formLabel:90px;
+$formLabelColor:#6D6D72;
+.ui-form{
+	.ui-form-title{
+		padding-left: 15px;
+		color: $formLabelColor;
+		font-size: 14px;
+		margin-top: 30px;
+	}
+	& > ul {
+		background: $formBac;
+	}
+	& > ul li{
+			font-size: 16px;
+			margin-left: 15px;
+			height: 44px;
+			line-height: 44px;
+		}
+		.ui-border-t:first-child{
+		border: 0;
+  		background-image: none;
+	}
+	.ui-form-text{
+		display: flex;
+		margin-left: 15px;
+		height: 44px;
+		line-height: 44px;
+		label{
+			  display: block;
+			  flex:0 0 $formLabel;
+		}
+		.ui-form-input{
+			  display: block;
+			  flex: 1;
+			  padding-left: 5px;
+		}
+		.ui-select-wrap{
+			flex:1;
+			.ui-select-value{
+				border:none;
+				text-align: left;
+				padding-left: 5px;
+			}
+			.ui-select-arr{
+				right: 20px;
+			}
+			.ui-select-arr:after{
+				content: '\e603';
+			}
+		}
+	}
+	.ui-form-switch{
+		display: flex;
+		align-items: center;
+		input{
+			width: 50px;
+			height: 30px;
+			border-radius: 18px;
+			position: relative;
+			&:after{
+				width: 50px;
+				height: 30px;
+				box-sizing: border-box;
+				border: 1px solid #BCB8B8;
+				border-radius: 18px;
+				border: 1px solid #BCB8B8;
+				transition: box-shadow .3s ease-in-out,border .3s ease;
+				box-shadow: #FFF 0 0 0 0 inset;
+				content: '';
+				display: block;
+				margin: 0px auto;
+			}
+			&:checked:after{
+				border: 0px solid #BCB8B8;
+				box-shadow: #4DD865 0 0 0 16px inset;
+			}
+			&:checked:before{
+				transform: translateX(20px);
+			}
+			&:before{
+				content: ' ';
+				display: block;
+				width: 28px;
+				height: 28px;
+				background: #FFF;
+				position: absolute;
+				top: 1px;
+				left: 1px;
+				border-radius: 14px;
+				box-shadow: 0px 2px 2px #7B7B7B;
+				z-index: 999;
+				transition: transform .3s ease-in-out;
+			}
+		}
+		
+	}
 }
 .ui-select-wrap{
 	position: relative;
@@ -35,8 +123,5 @@ $selectDefH:40px;
 		right: 10px;
 		line-height: inherit;
 		height: inherit;
-		&:after{
-			content: "↓"
-		}
 	}
 }

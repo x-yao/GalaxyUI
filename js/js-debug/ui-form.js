@@ -12,7 +12,7 @@
 
 	function wrapSelect(select) {
 		select.wrap("<div class=ui-select-wrap></div>");
-		var text = "<div class='ui-select-value'></div><div class='ui-select-arr'></div>"
+		var text = "<div class='ui-select-value'></div><div class='ui-select-arr ui-iconfont'></div>"
 		$(select).before(text);
 	}
 
@@ -23,7 +23,7 @@
 		select.on("change",function(){
 			var el = $(this);
 			el.parent().find(".ui-select-value").text(selecText(el));
-		})
+		});
 	}
 	function selecText($el){
 		return $el.find("option").not(function(){ return !this.selected }).text();

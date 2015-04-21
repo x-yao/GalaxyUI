@@ -57,7 +57,7 @@ console.log("hello");;
 
 	function wrapSelect(select) {
 		select.wrap("<div class=ui-select-wrap></div>");
-		var text = "<div class='ui-select-value'></div><div class='ui-select-arr'></div>"
+		var text = "<div class='ui-select-value'></div><div class='ui-select-arr ui-iconfont'></div>"
 		$(select).before(text);
 	}
 
@@ -68,7 +68,7 @@ console.log("hello");;
 		select.on("change",function(){
 			var el = $(this);
 			el.parent().find(".ui-select-value").text(selecText(el));
-		})
+		});
 	}
 	function selecText($el){
 		return $el.find("option").not(function(){ return !this.selected }).text();
@@ -144,7 +144,6 @@ console.log("hello");;
 			leftCont = el.find('.ui-slide-left .ui-slide-item').length;
 			rightCont = el.find('.ui-slide-right .ui-slide-item').length;
 			startP = touch.pageX;
-			console.log(touch.pageX);
 			el.on('touchmove.slide','.ui-list-slide',function(e2){
 				e2.preventDefault();
 				var direction;

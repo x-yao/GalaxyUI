@@ -42,7 +42,8 @@
   z-index: 999;
   left: 50%;
   margin-left: -40%;
-  text-align: center; }
+  text-align: center;
+  overflow: hidden; }
 
 .ui-alert-button {
   display: -webkit-box;

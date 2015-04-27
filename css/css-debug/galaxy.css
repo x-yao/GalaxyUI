@@ -285,14 +285,18 @@ em, i {
   display: flex;
   margin-left: 15px;
   height: 44px;
-  line-height: 44px; }
+  line-height: 44px;
+  justify-content: space-between;
+  align-items: center; }
   .ui-form .ui-form-text label {
     display: block;
-    flex: 0 0 90px; }
+    flex: 0 0 90px;
+    width: 90px; }
   .ui-form .ui-form-text .ui-form-input {
     display: block;
     flex: 1;
-    padding-left: 5px; }
+    padding-left: 5px;
+    height: 44px; }
   .ui-form .ui-form-text .ui-select-wrap {
     flex: 1; }
     .ui-form .ui-form-text .ui-select-wrap .ui-select-value {
@@ -304,13 +308,13 @@ em, i {
     .ui-form .ui-form-text .ui-select-wrap .ui-select-arr:after {
       content: '\e603'; }
 .ui-form .ui-form-switch {
-  display: flex;
-  align-items: center; }
+  padding-right: 15px; }
   .ui-form .ui-form-switch input {
     width: 50px;
     height: 30px;
     border-radius: 18px;
-    position: relative; }
+    position: relative;
+    display: block; }
     .ui-form .ui-form-switch input:after {
       width: 50px;
       height: 30px;
@@ -338,9 +342,35 @@ em, i {
       top: 1px;
       left: 1px;
       border-radius: 14px;
-      box-shadow: 0px 2px 2px #7B7B7B;
+      box-shadow: 0px 2px 2px #C7C7C7;
       z-index: 999;
-      transition: transform .3s ease-in-out; }
+      transition: transform 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.28); }
+.ui-form .ui-form-radio, .ui-form .ui-form-checkbox {
+  flex: 1;
+  height: 30px;
+  border: 1px solid #037AFF;
+  border-radius: 4px;
+  display: flex;
+  margin-right: 15px;
+  overflow: hidden; }
+  .ui-form .ui-form-radio input.ui-radio-item, .ui-form .ui-form-radio input.ui-checkbox-item, .ui-form .ui-form-checkbox input.ui-radio-item, .ui-form .ui-form-checkbox input.ui-checkbox-item {
+    flex: 1;
+    width: 0%;
+    border-left: 1px solid #037AFF;
+    color: #037AFF;
+    background: #FFF;
+    height: 100%;
+    display: block; }
+    .ui-form .ui-form-radio input.ui-radio-item:first-child, .ui-form .ui-form-radio input.ui-checkbox-item:first-child, .ui-form .ui-form-checkbox input.ui-radio-item:first-child, .ui-form .ui-form-checkbox input.ui-checkbox-item:first-child {
+      border-left: 0; }
+    .ui-form .ui-form-radio input.ui-radio-item:checked, .ui-form .ui-form-radio input.ui-checkbox-item:checked, .ui-form .ui-form-checkbox input.ui-radio-item:checked, .ui-form .ui-form-checkbox input.ui-checkbox-item:checked {
+      background: #037AFF;
+      color: #FFF; }
+    .ui-form .ui-form-radio input.ui-radio-item:after, .ui-form .ui-form-radio input.ui-checkbox-item:after, .ui-form .ui-form-checkbox input.ui-radio-item:after, .ui-form .ui-form-checkbox input.ui-checkbox-item:after {
+      content: attr(title);
+      display: block;
+      text-align: center;
+      line-height: 30px; }
 
 .ui-select-wrap {
   position: relative;

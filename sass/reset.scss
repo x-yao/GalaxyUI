@@ -78,7 +78,7 @@ select {
     font-weight: inherit;
     border: 0;
     background: none;
-    -webkit-appearance: none;
+    -webkit-appearance: none;//用于重置浏览器默认样式，ie11mobile反向支持，移动端兼容性良好，pc端慎用。
     outline: 0;
     border-radius: 0;
 }

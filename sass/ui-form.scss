@@ -1,5 +1,7 @@
 $selectDefW:90%;
 $selectDefH:44px;
+$formDefHeight:44px;
+$formSlideWidth:28px;
 $formBac:#FFF;
 $formLabel:90px;
 $formLabelColor:#6D6D72;
@@ -16,8 +18,8 @@ $formLabelColor:#6D6D72;
 	& > ul li{
 			font-size: 16px;
 			margin-left: 15px;
-			height: 44px;
-			line-height: 44px;
+			height: $formDefHeight;
+			line-height: $formDefHeight;
 		}
 		.ui-border-t:first-child{
 		border: 0;
@@ -26,8 +28,8 @@ $formLabelColor:#6D6D72;
 	.ui-form-text{
 		display: flex;
 		margin-left: 15px;
-		height: 44px;
-		line-height: 44px;
+		height: $formDefHeight;
+		line-height: $formDefHeight;
 		justify-content: space-between;
 		align-items: center;
 		label{
@@ -39,7 +41,7 @@ $formLabelColor:#6D6D72;
 			  display: block;
 			  flex: 1;
 			  padding-left: 5px;
-			  height: 44px;
+			  height: $formDefHeight;
 			  //line-height: 44px;
 		}
 		.ui-select-wrap{
@@ -88,13 +90,13 @@ $formLabelColor:#6D6D72;
 			&:before{
 				content: ' ';
 				display: block;
-				width: 28px;
-				height: 28px;
+				width: $formSlideWidth;
+				height: $formSlideWidth;
 				background: #FFF;
 				position: absolute;
 				top: 1px;
 				left: 1px;
-				border-radius: 14px;
+				border-radius: $formSlideWidth/2;
 				box-shadow: 0px 2px 2px #C7C7C7;
 				z-index: 999;
 				transition: transform .3s cubic-bezier(0.18, 0.89, 0.32, 1.28);;
@@ -132,6 +134,28 @@ $formLabelColor:#6D6D72;
 				line-height: 30px;
 			}
 		  }
+	}
+	.ui-form-range{
+		flex:1;
+		input{
+			display: block;
+		}
+		input[type=range]::-webkit-slider-thumb{
+			-webkit-appearance: none;
+			width: $formSlideWidth;
+			height: $formSlideWidth;
+			background: #FFF;
+			border-radius: $formSlideWidth/2;
+			box-shadow: 0px 2px 2px #C7C7C7;
+			margin-top: -13px;
+		}
+		input[type=range]::-webkit-slider-runnable-track{
+			height: 2px;
+			// height: 0;
+			// border: 1px solid #CCC;
+			// box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+			background: #CCC;
+		}
 	}
 }
 .ui-select-wrap{

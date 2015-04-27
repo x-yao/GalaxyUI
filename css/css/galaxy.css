@@ -438,6 +438,24 @@ em, i {
       display: block;
       text-align: center;
       line-height: 30px; }
+.ui-form .ui-form-range {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+          flex: 1; }
+  .ui-form .ui-form-range input {
+    display: block; }
+  .ui-form .ui-form-range input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 28px;
+    height: 28px;
+    background: #FFF;
+    border-radius: 14px;
+    -webkit-box-shadow: 0px 2px 2px #C7C7C7;
+            box-shadow: 0px 2px 2px #C7C7C7;
+    margin-top: -13px; }
+  .ui-form .ui-form-range input[type=range]::-webkit-slider-runnable-track {
+    height: 2px;
+    background: #CCC; }
 
 .ui-select-wrap {
   position: relative;

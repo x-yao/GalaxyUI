@@ -11,7 +11,16 @@
 </head>
 <body>
 	<header class="ui-layout-header">header</header>
-	<div class="ui-layout-main"><div style="height:2000px"></div></div>
+	<div class="ui-layout-main"><div style="height:2000px">
+		<fieldset class="common-radio-horizontal">
+            <label for="radio-choice-1" class="btn ui-radio btn-pass">通过</label>
+            <input type="radio" id="radio-choice-1" class="radio-btn" name="InterviewStatus" data-role="button" value="1" checked />
+            <label for="radio-choice-2" class="btn ui-radio btn-hold">待定</label>
+            <input type="radio" id="radio-choice-2" class="radio-btn" name="InterviewStatus" data-role="button" value="2" />
+            <label for="radio-choice-3" class="btn ui-radio btn-clean">淘汰</label>
+            <input type="radio" id="radio-choice-3" class="radio-btn" name="InterviewStatus" data-role="button" value="3" />
+        </fieldset>
+	</div></div>
 	<footer class="ui-layout-footer">footer</footer>
 	<script>
     $(document).ready(function() {

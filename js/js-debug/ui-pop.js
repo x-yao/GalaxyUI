@@ -63,6 +63,7 @@
 		}
 	}
 	function renderDef(value,ani,el,state,fullscreen,click){
+		var tmp;//填充模板
 		var tAni = animate[ani];
 		var warp = initWrap(tAni,state,fullscreen);
 		if (!el) {
@@ -70,9 +71,9 @@
 		}else{
 			if (value) {
 				var val = $('<div class="ui-pop-str">'+value+'</div>');
-				var tmp = $(el).concat(val);
+				tmp = $(el).concat(val);
 			}else{
-				var tmp = $(el);
+				tmp = $(el);
 			};
 		};
 		var popEl = warp.append(tmp);
@@ -166,7 +167,7 @@
 			button.on("touchmove.active",function(){
 				clearTimeout(act);
 				$(el).removeClass("active");
-			})
+			});
 			button.on("touchend.active",function(){
 				clearTimeout(act);
 				$(el).removeClass("active");

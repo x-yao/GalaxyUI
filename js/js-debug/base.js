@@ -7,7 +7,7 @@
 		init: function() {
 			this.linkInit();
 			this.ptrInit();
-			this.tapInit();
+			this.tabInit();
 			this.formInit();
 			this.listInit();
 		},

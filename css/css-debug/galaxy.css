@@ -255,16 +255,26 @@ em, i {
     width: 0%;
     padding: 10px; }
 
-.ui-tap .ui-tap-header {
+.ui-tab .ui-tab-header {
   display: flex;
   align-items: stretch; }
-  .ui-tap .ui-tap-header .ui-item-header {
+  .ui-tab .ui-tab-header .ui-item-header {
     display: flex;
     flex: 1;
     justify-content: center;
     align-items: center;
     width: 0%;
     padding: 10px; }
+.ui-tab.ui-tab-full .ui-tab-contain .ui-item-contain {
+  position: absolute;
+  top: 40px;
+  bottom: 0px;
+  overflow-y: scroll;
+  background: #FFF;
+  -webkit-overflow-scrolling: touch;
+  width: 100%; }
+  .ui-tab.ui-tab-full .ui-tab-contain .ui-item-contain.active {
+    z-index: 999; }
 
 .ui-form .ui-form-title {
   padding-left: 15px;

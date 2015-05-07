@@ -7,7 +7,7 @@
 		init: function() {
 			this.linkInit();
 			this.ptrInit();
-			this.tapInit();
+			this.tabInit();
 			this.formInit();
 			this.listInit();
 		},
@@ -242,7 +242,7 @@ console.log("hello");;
 		if (typeof opt == "string" || typeof opt == "number") {
 			render(opt,'','aInOut');
 		}else if(typeof opt == "object"){
-			init(opt)
+			init(opt);
 		};
 		perevendDef();
 	}
@@ -439,28 +439,37 @@ console.log("hello");;
 		// })
 }(window.Zepto);
 ! function($) {
-	var header,contain;
-	$.fn.galaxy.prototype.tapInit = function () {
-		header = $(".ui-tap .ui-tap-header .ui-item-header");
-		contain = $(".ui-tap .ui-tap-contain .ui-item-contain");
-		if (header.length == 0) {
+	var header,headers,contain,current;
+	$.fn.galaxy.prototype.tabInit = function () {
+		header = $(".ui-tab .ui-tab-header");
+		headers = $(".ui-tab .ui-tab-header .ui-item-header");
+		contain = $(".ui-tab .ui-tab-contain .ui-item-contain");
+		if (headers.length == 0) {
 			return false
 		};
-		header.on("click",function(){
+		headers.on("click",function(){
+			if (current) {
+				var scrollTop = current.scrollTop();
+				current.data().scrollTop = scrollTop;
+			};
 			var index = $(this).index();
 			removeAll();
 			$(this).addClass("active");
-			$(contain[index]).show();
+			current = $(contain[index]);
+			current.addClass('active');
 		});
 		init();
 	}
 	function removeAll () {
-		header.removeClass("active");
-		contain.hide();
+		headers.removeClass("active");
+		contain.removeClass('active');
 	}
 	function init () {
-		if(!header.hasClass("active")){
-			$(header[0]).trigger("click")
+		var active = header.data().active-1;
+		if(!headers.hasClass("active")&&!active){
+			$(headers[0]).trigger("click");
+		}else{
+			$(headers[active]).trigger("click");
 		}
 	}
 }(window.Zepto)

@@ -1,7 +1,9 @@
-$tapPading: 10px;
+$tabPading: 10px;
 //$activeBg:#CCC;
-.ui-tap{
-	.ui-tap-header{
+$tabContainFullTop:40px;
+$tabContainFullBtm:0px;
+.ui-tab{
+	.ui-tab-header{
 		display: flex;
 		align-items: stretch;
 		.ui-item-header{
@@ -10,17 +12,17 @@ $tapPading: 10px;
 			justify-content: center;
 			align-items: center;
 			width: 0%;
-			padding:$tapPading;
+			padding:$tabPading;
 			&.active{
 				//background: $activeBg;
 			}
 		}
 	}
-	// .ui-tap-ani {
+	// .ui-tab-ani {
 	// 	.ui-item-header{
 	// 		transition: all 1s ease;
 	// 	}
-	// 	&.ui-tap-contain{
+	// 	&.ui-tab-contain{
 	// 		display: flex;
 	// 		flex-direction: column;
 	// 		.ui-item-contain{
@@ -30,4 +32,21 @@ $tapPading: 10px;
 	// 	border:1px solid #CCC;
 	// 	transition: all 1s ease;
 	// }
+	&.ui-tab-full{
+		.ui-tab-contain{
+			.ui-item-contain{
+				position: absolute;
+				top: $tabContainFullTop;
+				bottom: $tabContainFullBtm;
+				overflow-y: scroll;
+				background: #FFF;
+				-webkit-overflow-scrolling: touch;
+				width: 100%;
+				&.active{
+				z-index: 999;
+			}
+			}
+
+		}
+	}
 }

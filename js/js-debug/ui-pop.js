@@ -17,7 +17,7 @@
 		if (typeof opt == "string" || typeof opt == "number") {
 			render(opt,'','aInOut');
 		}else if(typeof opt == "object"){
-			init(opt)
+			init(opt);
 		};
 		perevendDef();
 	}

@@ -8,7 +8,7 @@
     align-items: center;
     width: 0%;
     padding: 10px; }
-.ui-tab.ui-tab-full .ui-tab-contain .ui-item-contain {
+.ui-tab.ui-tab-full .ui-tab-contain .ui-item-scroll {
   position: absolute;
   top: 40px;
   bottom: 0px;
@@ -16,7 +16,7 @@
   background: #FFF;
   -webkit-overflow-scrolling: touch;
   width: 100%; }
-  .ui-tab.ui-tab-full .ui-tab-contain .ui-item-contain.active {
+  .ui-tab.ui-tab-full .ui-tab-contain .ui-item-scroll.active {
     z-index: 999; }
 
 /*# sourceMappingURL=ui-tap.css.map */

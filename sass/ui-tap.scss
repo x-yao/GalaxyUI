@@ -34,7 +34,7 @@ $tabContainFullBtm:0px;
 	// }
 	&.ui-tab-full{
 		.ui-tab-contain{
-			.ui-item-contain{
+			.ui-item-scroll{
 				position: absolute;
 				top: $tabContainFullTop;
 				bottom: $tabContainFullBtm;
@@ -43,10 +43,9 @@ $tabContainFullBtm:0px;
 				-webkit-overflow-scrolling: touch;
 				width: 100%;
 				&.active{
-				z-index: 999;
+					z-index: 999;
+				}
 			}
-			}
-
 		}
 	}
 }

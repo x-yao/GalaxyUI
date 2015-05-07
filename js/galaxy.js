@@ -459,6 +459,7 @@ console.log("hello");;
 			current.addClass('active');
 		});
 		init();
+		scrollHandel();
 	}
 	function removeAll () {
 		headers.removeClass("active");
@@ -471,5 +472,32 @@ console.log("hello");;
 		}else{
 			$(headers[active]).trigger("click");
 		}
+	}
+	function scrollHandel(){
+		$('.ui-item-scroll').on('touchstart',function(e){
+			// if ($(this).scrollTop() !=0) {
+			// 	return false;
+			// };
+			var $el = $(this),
+				firstChidren = $($el.children().get(0)),
+				ch = $el.height(),
+				ih = firstChidren.height();
+			var scrollBtm = ih-ch;
+			var touch = e.changedTouches[0];
+			var st = touch.pageY;
+			$(this).on('touchmove',function(e1){
+				var touch2 = e1.changedTouches[0];
+				var mt = touch2.pageY;
+				if (mt-st>0&&$(this).scrollTop()==0) {
+					e1.preventDefault();
+				}else if(mt-st<0&&$(this).scrollTop()==scrollBtm){
+					e1.preventDefault();
+				};
+			})
+		})
+		.on('touchend',function(){
+			$(this).off('touchmove');
+		})
+
 	}
 }(window.Zepto)

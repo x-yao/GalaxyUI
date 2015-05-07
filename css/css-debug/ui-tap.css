@@ -15,8 +15,10 @@
   overflow-y: scroll;
   background: #FFF;
   -webkit-overflow-scrolling: touch;
-  width: 100%; }
+  width: 100%;
+  display: none; }
   .ui-tab.ui-tab-full .ui-tab-contain .ui-item-scroll.active {
+    display: block;
     z-index: 999; }
 
 /*# sourceMappingURL=ui-tap.css.map */

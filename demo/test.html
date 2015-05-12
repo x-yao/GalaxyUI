@@ -1,63 +1,327 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
-	<title>Document</title>
-	<link rel="stylesheet" href="../css/css/galaxy.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/css/galaxy.css">
     <script src="../js/zepto.js"></script>
     <script src="../js/fastclick.js"></script>
     <script src="../js/galaxy.js"></script>
     <style>
-		.active{
-			background: #CCC;	
-		}
-		.ui-list li{
-			background-color: #FFF;
-		}
-    </style>
+    .active.ui-item-header {
+    	color: #01a4e5;
+    }
+    
+    .ui-list li {
+        background-color: #FFF;
+        line-height: 1;
+        padding: 10px 15px;
+        border-bottom: 1px solid #eeeff3;
+        height: 80px;
+    }
+    
+    .ui-list li:last-child {
+        border-bottom: none;
+    }
+    
+    .ui-list li.ui-list-loading {
+        height: 40px;
+    }
+    
+    .ui-list li section {
+        width: 100%;
+    }
+    .name {
+        float: left;
+        font-size: 20px;
+    }
+    
+    .phone {
+        color: #CCC;
+        text-align: right;
+        line-height: 20px;
+    }
+    
+.ui-list li section:nth-child(2) {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  margin-top: 20px;
+  color: #CCC; }
 
+.job {
+  width: 120px;
+  -webkit-box-flex: 120px;
+  -webkit-flex: 120px 3;
+          flex: 120px 3; }
+
+.date {
+  width: 80px;
+  -webkit-box-flex: 80px;
+  -webkit-flex: 80px 1;
+          flex: 80px 1; }
+
+.state {
+  width: 80px;
+  text-align: right;
+  -webkit-box-flex: 80px;
+  -webkit-flex: 80px 1;
+          flex: 80px 1; }
+    
+    .line {
+        width: 100%;
+        height: 1px;
+        position: fixed;
+        background: #eeeff3;
+        z-index: 999;
+    }
+    
+    .currline {
+        width: 50%;
+        padding: 0 30px;
+        -webkit-transition: -webkit-transform .4s ease-in-out;
+            transition: transform .4s ease-in-out;
+    }
+	.switch{
+		-webkit-transform: translateX(100%);
+            transform: translateX(100%);
+	}
+    .curentline {
+        height: 1px;
+        background: #01a4e5;
+    }
+    </style>
 </head>
+
 <body>
-	<div class="ui-tab ui-tab-full">
-		<div class="ui-tab-header" data-active='1'>
-			<div class="ui-item-header">111</div>
-			<div class="ui-item-header">222</div>
-		</div>
-		<div class="ui-tab-contain">
-			<div class="ui-item-scroll ui-item-contain">
-				<ul class="ui-list ui-list-scroll">
-			        <li>1</li>
-			        <li>2</li>
-			        <li>3</li>
-			        <li>4</li>
-			        <li>5</li>
-			        <li>6</li>
-			        <li>7</li>
-			        <li>8</li>
-			        <li>9</li>
-			        <li>10</li>
-			    </ul>
-			</div>
-			<div class="ui-item-scroll ui-item-contain">
-				<ul class="ui-list ui-list-scroll">
-			        <li>1</li>
-			        <li>2</li>
-			        <li>3</li>
-			        <li>4</li>
-			        <li>5</li>
-			        <li>6</li>
-			        <li>7</li>
-			        <li>8</li>
-			        <li>9</li>
-			        <li>10</li>
-			    </ul>
-			</div>
-		</div>
-	</div>
-	<script>
+    <div class="ui-tab ui-tab-full">
+        <div class="ui-tab-header" data-active='1'>
+            <div class="ui-item-header">进行中</div>
+            <div class="ui-item-header">已结束</div>
+        </div>
+        <div class="line">
+            <div class="currline">
+                <div class="curentline active"></div>
+            </div>
+        </div>
+        <div class="ui-tab-contain">
+            <div class="ui-item-scroll ui-item-contain">
+                <ul class="ui-list ui-list-scroll">
+                    <li class="ui-center ui-center-col">
+                        <section>
+                            <div class="name">张三</div>
+                            <div class="phone">13555865213</div>
+                        </section>
+                        <section>
+                            <div class="job">产品经理</div>
+                            <div class="date">2015-02-01</div>
+                            <div class="state">简历初筛</div>
+                        </section>
+                    </li>
+                    <li class="ui-center ui-center-col">
+                        <section>
+                            <div class="name">张三</div>
+                            <div class="phone">13555865213</div>
+                        </section>
+                        <section>
+                            <div class="job">产品经理</div>
+                            <div class="date">2015-02-01</div>
+                            <div class="state">简历初筛</div>
+                        </section>
+                    </li>
+                    <li class="ui-center ui-center-col">
+                        <section>
+                            <div class="name">张三</div>
+                            <div class="phone">13555865213</div>
+                        </section>
+                        <section>
+                            <div class="job">产品经理</div>
+                            <div class="date">2015-02-01</div>
+                            <div class="state">简历初筛</div>
+                        </section>
+                    </li>
+                    <li class="ui-center ui-center-col">
+                        <section>
+                            <div class="name">张三</div>
+                            <div class="phone">13555865213</div>
+                        </section>
+                        <section>
+                            <div class="job">产品经理</div>
+                            <div class="date">2015-02-01</div>
+                            <div class="state">简历初筛</div>
+                        </section>
+                    </li>
+                    <li class="ui-center ui-center-col">
+                        <section>
+                            <div class="name">张三</div>
+                            <div class="phone">13555865213</div>
+                        </section>
+                        <section>
+                            <div class="job">产品经理</div>
+                            <div class="date">2015-02-01</div>
+                            <div class="state">简历初筛</div>
+                        </section>
+                    </li>
+                    <li class="ui-center ui-center-col">
+                        <section>
+                            <div class="name">张三</div>
+                            <div class="phone">13555865213</div>
+                        </section>
+                        <section>
+                            <div class="job">产品经理</div>
+                            <div class="date">2015-02-01</div>
+                            <div class="state">简历初筛</div>
+                        </section>
+                    </li>
+                    <li class="ui-center ui-center-col">
+                        <section>
+                            <div class="name">张三</div>
+                            <div class="phone">13555865213</div>
+                        </section>
+                        <section>
+                            <div class="job">产品经理</div>
+                            <div class="date">2015-02-01</div>
+                            <div class="state">简历初筛</div>
+                        </section>
+                    </li>
+                    <li class="ui-center ui-center-col">
+                        <section>
+                            <div class="name">张三</div>
+                            <div class="phone">13555865213</div>
+                        </section>
+                        <section>
+                            <div class="job">产品经理</div>
+                            <div class="date">2015-02-01</div>
+                            <div class="state">简历初筛</div>
+                        </section>
+                    </li>
+                    <li class="ui-center ui-center-col">
+                        <section>
+                            <div class="name">张三</div>
+                            <div class="phone">13555865213</div>
+                        </section>
+                        <section>
+                            <div class="job">产品经理</div>
+                            <div class="date">2015-02-01</div>
+                            <div class="state">简历初筛</div>
+                        </section>
+                    </li>
+                    <li class="ui-center ui-center-col">
+                        <section>
+                            <div class="name">张三</div>
+                            <div class="phone">13555865213</div>
+                        </section>
+                        <section>
+                            <div class="job">产品经理</div>
+                            <div class="date">2015-02-01</div>
+                            <div class="state">简历初筛</div>
+                        </section>
+                    </li>
+                    <li class="ui-center ui-list-loading">
+                        <div class="ui-loading">
+                            <div class="ani-base-loading"></div>
+                            <div class="ani-base-loading"></div>
+                            <div class="ani-base-loading"></div>
+                            <div class="ani-base-loading"></div>
+                            <div class="ani-base-loading"></div>
+                            <div class="ani-base-loading"></div>
+                            <div class="ani-base-loading"></div>
+                            <div class="ani-base-loading"></div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="ui-item-scroll ui-item-contain">
+                <ul class="ui-list ui-list-scroll">
+                    <li class="ui-center ui-center-col">
+                        <section>
+                            <div class="name">张三</div>
+                            <div class="phone">13555865213</div>
+                        </section>
+                        <section>
+                            <div class="job">产品经理</div>
+                            <div class="date">2015-02-01</div>
+                            <div class="state">简历初筛</div>
+                        </section>
+                    </li>
+                    <li class="ui-center ui-center-col">
+                        <section>
+                            <div class="name">张三</div>
+                            <div class="phone">13555865213</div>
+                        </section>
+                        <section>
+                            <div class="job">产品经理</div>
+                            <div class="date">2015-02-01</div>
+                            <div class="state">简历初筛</div>
+                        </section>
+                    </li>
+                    <li class="ui-center ui-center-col">
+                        <section>
+                            <div class="name">张三</div>
+                            <div class="phone">13555865213</div>
+                        </section>
+                        <section>
+                            <div class="job">产品经理</div>
+                            <div class="date">2015-02-01</div>
+                            <div class="state">简历初筛</div>
+                        </section>
+                    </li>
+                    <li class="ui-center ui-center-col">
+                        <section>
+                            <div class="name">张三</div>
+                            <div class="phone">13555865213</div>
+                        </section>
+                        <section>
+                            <div class="job">产品经理</div>
+                            <div class="date">2015-02-01</div>
+                            <div class="state">简历初筛</div>
+                        </section>
+                    </li>
+                    <li class="ui-center ui-center-col">
+                        <section>
+                            <div class="name">张三</div>
+                            <div class="phone">13555865213</div>
+                        </section>
+                        <section>
+                            <div class="job">产品经理</div>
+                            <div class="date">2015-02-01</div>
+                            <div class="state">简历初筛</div>
+                        </section>
+                    </li>
+                    <li class="ui-center ui-center-col">
+                        <section>
+                            <div class="name">张三</div>
+                            <div class="phone">13555865213</div>
+                        </section>
+                        <section>
+                            <div class="job">产品经理</div>
+                            <div class="date">2015-02-01</div>
+                            <div class="state">简历初筛</div>
+                        </section>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script>
     $(document).ready(function() {
-		var galaxy = new Galaxy();
-	})
+        var galaxy = new Galaxy();
+        galaxy.scroll('.ui-item-scroll', true);
+        $('.ui-item-scroll').on('scrLoad', function() {
+            //alert(1)
+        })
+        galaxy.showLoading();
+        $('.ui-item-header').on('click',function(){
+        	//galaxy.showLoading();
+        	var index = $(this).index();
+        	if(index == 1){
+        		$('.currline').addClass('switch');
+        	}else{
+        		$('.currline').removeClass('switch');
+        	}
+        })
+    })
     </script>
 </body>

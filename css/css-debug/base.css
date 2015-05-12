@@ -76,6 +76,8 @@
   display: flex;
   justify-content: center;
   align-items: center; }
+  .ui-center.ui-center-col {
+    flex-direction: column; }
 
 .ui-header-sta {
   width: 100%;
@@ -94,5 +96,52 @@
   -webkit-font-smoothing: antialiased;
   -webkit-text-stroke-width: 0.2px;
   -moz-osx-font-smoothing: grayscale; }
+
+.ui-loading {
+  position: relative;
+  top: -15px; }
+  .ui-loading div {
+    width: 3px;
+    height: 9px;
+    background: #000;
+    border-radius: 2px;
+    position: absolute;
+    transform-origin: 50% 15px;
+    opacity: .2; }
+    .ui-loading div:nth-child(1) {
+      transform: rotate(45deg);
+      animation-delay: 0.2s; }
+    .ui-loading div:nth-child(2) {
+      transform: rotate(90deg);
+      animation-delay: 0.4s; }
+    .ui-loading div:nth-child(3) {
+      transform: rotate(135deg);
+      animation-delay: 0.6s; }
+    .ui-loading div:nth-child(4) {
+      transform: rotate(180deg);
+      animation-delay: 0.8s; }
+    .ui-loading div:nth-child(5) {
+      transform: rotate(225deg);
+      animation-delay: 1s; }
+    .ui-loading div:nth-child(6) {
+      transform: rotate(270deg);
+      animation-delay: 1.2s; }
+    .ui-loading div:nth-child(7) {
+      transform: rotate(315deg);
+      animation-delay: 1.4s; }
+    .ui-loading div:nth-child(8) {
+      transform: rotate(360deg);
+      animation-delay: 1.6s; }
+
+.ani-base-loading {
+  animation: loading 1.6s infinite ease-in-out; }
+
+@keyframes loading {
+  0% {
+    opacity: .2; }
+  50% {
+    opacity: .8; }
+  100% {
+    opacity: .2; } }
 
 /*# sourceMappingURL=base.css.map */

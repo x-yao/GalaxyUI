@@ -45,9 +45,10 @@ $tabContainFullBtm:0px;
 				display: none;
 				&.active{
 					display: block;
-					z-index: 999;
+					//z-index: 499;
 				}
 			}
 		}
 	}
+
 }

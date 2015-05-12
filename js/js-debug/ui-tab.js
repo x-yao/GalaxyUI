@@ -19,7 +19,6 @@
 			current.addClass('active');
 		});
 		init();
-		scrollHandel();
 	}
 	function removeAll () {
 		headers.removeClass("active");
@@ -33,8 +32,11 @@
 			$(headers[active]).trigger("click");
 		}
 	}
-	function scrollHandel(){
-		$('.ui-item-scroll').on('touchstart',function(e){
+	$.fn.galaxy.prototype.scroll = function(el,needload) {
+		scrollHandel(el,needload);
+	}
+	function scrollHandel(el,needload){
+		$(el).on('touchstart',function(e){
 			// if ($(this).scrollTop() !=0) {
 			// 	return false;
 			// };
@@ -45,6 +47,9 @@
 			var scrollBtm = ih-ch;
 			var touch = e.changedTouches[0];
 			var st = touch.pageY;
+			if(needload){
+				scrollLoad(el,scrollBtm);
+			}
 			$(this).on('touchmove',function(e1){
 				var touch2 = e1.changedTouches[0];
 				var mt = touch2.pageY;
@@ -58,6 +63,19 @@
 		.on('touchend',function(){
 			$(this).off('touchmove');
 		})
-
+	}
+	function scrollLoad(el,btm){
+		var $el = $(el);
+		var lastst = $el.scrollTop();
+		$el.on('scroll',function(e){
+			var thisst = $(this).scrollTop()
+			console.log(thisst,btm);
+			if (btm-thisst<50 && thisst > lastst ) {
+				console.log('hi');
+				$(this).trigger('scrLoad')
+					   .off('scroll');
+			};
+			lastst = thisst;
+		})
 	}
 }(window.Zepto)

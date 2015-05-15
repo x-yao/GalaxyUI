@@ -13,29 +13,36 @@
     body {
         background: #EEE;
     }
+    /*分分钟搞垮手机浏览器*/
+    /*input::-webkit-textfield-decoration-container {
+      display: none;
+    }*/
     </style>
     <script>
     $(document).ready(function() {
         var galaxy = new Galaxy();
     })
+    $(document).on('keydown',function(e){
+        console.log(e.keyCode);
+    })
     </script>
 </head>
 
 <body style="background:#EFEFF4">
-    <form class="ui-form">
+    <form class="ui-form" action="javascript:void (0)">
     	<div class="ui-form-title">123</div>
         <ul class="ui-form-ul ui-border-tb">
             <li class="ui-form-text ui-border-t">
                 <label for="">lable</label>
-                <input type="text" class="ui-form-input" placeholder='placeholder'>
+                <input type="search" class="ui-form-input" id='name' autocomplete='off' placeholder='placeholder'>
             </li>
             <li class="ui-form-text ui-border-t">
                 <label for="">姓名</label>
-                <input type="text" class="ui-form-input" placeholder='placeholder'>
+                <input type="number" class="ui-form-input" placeholder='placeholder'>
             </li>
             <li class="ui-form-text ui-border-t">
                 <label for="">邮箱</label>
-                <input type="text" class="ui-form-input" placeholder='placeholder'>
+                <input type="email" class="ui-form-input" placeholder='placeholder'>
             </li>
             <li class="ui-form-text ui-border-t">
                 <label for="">select</label>

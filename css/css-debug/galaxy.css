@@ -81,6 +81,12 @@ a, button, input, select, textarea, a:focus, button:focus, input:focus, select:f
   outline: 0;
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0); }
 
+input[type="search"] {
+  -webkit-appearance: searchfield; }
+
+input[type="number"]::-webkit-inner-spin-button {
+  display: none; }
+
 a {
   -webkit-touch-callout: none;
   text-decoration: none;

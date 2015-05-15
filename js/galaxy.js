@@ -42,7 +42,7 @@
 $(document).ready(function() {
 	FastClick.attach(document.body);
 });
-console.log("hello");;
+;
 ! function($) {
 	$.fn.galaxy.prototype.formInit = function() {
 		var select = $(".ui-form-select")
